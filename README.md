@@ -1,0 +1,2 @@
+# .nixosbtw
+NixOS config.

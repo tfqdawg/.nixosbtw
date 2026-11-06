@@ -1,0 +1,136 @@
+# DEFAULTS.
+  # displays.
+  set $EXTERNAL_SCREEN HDMI-A-1
+  set $INTERNAL_SCREEN eDP-1
+
+  # defaults.
+  set $SUPER Mod4
+  set $TERMINAL foot
+  set $LAUNCHER tofi-drun --drun-launch=true
+  set $FILE_MANAGER dolphin
+  set $BROWSER io.gitlab.librewolf-community
+  set $POWER_MENU $HOME/.nixosbtw/waybar/powermenu.sh
+
+  # swaylock before/after suspend
+  exec swayidle -w \
+    before-sleep 'swaylock -f -c 101010' \
+    after-resume 'swaymsg "output * power on"'
+
+# APPEARANCE.
+  # wallpaper
+  output * bg $HOME/.nixosbtw/wallpaper/1.jpg fill
+
+  # waybar
+  bar {
+    swaybar_command waybar
+  }
+
+  # bibata ice cursor.
+  set $CURSOR Bibata-Modern-Ice
+  set $CURSOR_SIZE 20
+  seat * xcursor_theme $CURSOR $CURSOR_SIZE
+  exec_always {
+    gsettings set org.gnome.desktop.interface cursor-theme $CURSOR
+    gsettings set org.gnome.desktop.interface cursor-size $CURSOR_SIZE
+  }
+
+# KEYBINDS.
+  # general.
+  bindsym $SUPER+e exec $FILE_MANAGER
+  bindsym $SUPER+k exec $TERMINAL
+  bindsym $SUPER+l exec swaylock -c 101010
+  bindsym $SUPER+q kill
+  bindsym $SUPER+a exec $LAUNCHER
+  bindsym $SUPER+Shift+s reload
+  bindsym $SUPER+Shift+BackSpace exec $POWER_MENU
+  bindsym $SUPER+Shift+p exec grim
+  
+  # apps.
+  bindsym $SUPER+w exec flatpak run $BROWSER
+  
+  # navigation.
+    # move window focus
+    bindsym $SUPER+Left focus left
+    bindsym $SUPER+Down focus down
+    bindsym $SUPER+Up focus up
+    bindsym $SUPER+Right focus right
+
+    # move windows
+    bindsym $SUPER+Shift+Left move left
+    bindsym $SUPER+Shift+Down move down
+    bindsym $SUPER+Shift+Up move up
+    bindsym $SUPER+Shift+Right move right
+
+    # switch workspace
+    bindsym $SUPER+Shift+h workspace number 1
+    bindsym $SUPER+Shift+j workspace number 2
+    bindsym $SUPER+Shift+k workspace number 3
+    bindsym $SUPER+Shift+l workspace number 4
+
+    # Move window across workspaces
+    bindsym $SUPER+Shift+1 move container to workspace number 1
+    bindsym $SUPER+Shift+2 move container to workspace number 2
+    bindsym $SUPER+Shift+3 move container to workspace number 3
+    bindsym $SUPER+Shift+4 move container to workspace number 4
+
+    # scratchpad
+    bindsym $SUPER+minus move scratchpad
+    bindsym $SUPER+equal scratchpad show
+
+  # utils.
+    # switch displays
+    bindsym $SUPER+Shift+F2 output $INTERNAL_SCREEN disable; output $EXTERNAL_SCREEN enable
+    bindsym $SUPER+Shift+F1 output $EXTERNAL_SCREEN disable; output $INTERNAL_SCREEN enable
+    bindsym $SUPER+Shift+F3 output $EXTERNAL_SCREEN enable; output $INTERNAL_SCREEN enable
+
+    # Special keys to adjust volume via PulseAudio
+    bindsym --locked XF86AudioMute exec pactl set-sink-mute \@DEFAULT_SINK@ toggle
+    bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
+    bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume \@DEFAULT_SINK@ +5%
+    bindsym --locked XF86AudioMicMute exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+
+    # Special keys to control media via playerctl
+    bindsym --locked XF86AudioPlay exec playerctl play-pause
+    bindsym --locked XF86AudioPause exec playerctl play-pause
+    bindsym --locked XF86AudioPrev exec playerctl previous
+    bindsym --locked XF86AudioNext exec playerctl next
+    bindsym --locked XF86AudioStop exec playerctl stop
+
+    # Special keys to adjust brightness via brightnessctl
+    bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+    bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+  # layout.
+    # fullscreen current focus
+    bindsym $SUPER+f fullscreen
+
+    # toggle float
+    bindsym $SUPER+v floating toggle
+
+    # focus between tiling and floating
+    bindsym $SUPER+space focus mode_toggle
+
+    # change next window will split vertically/horizontally
+    bindsym $SUPER+n splith
+    bindsym $SUPER+m splitv
+
+    # change current window split to vertical/horizontal
+    bindsym $SUPER+Shift+n layout toggle split
+
+    # floating window modifier
+    floating_modifier $SUPER normal
+
+# CONTAINERS.
+  # windows title format.
+  for_window [shell="xdg_shell"] title_format "%title (%app_id)"
+  for_window [shell="x_wayland"] title_format "%class - %title"
+  mouse_warping container
+
+  # appearance.
+  gaps inner 15
+  default_border none
+  default_floating_border none
+  smart_borders on
+
+# NIXOS-PROVIDED SWAY INTEGRATION.
+include /etc/sway/config.d/*

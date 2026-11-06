@@ -1,0 +1,111 @@
+@define-color bg #101010;
+@define-color fg #F1F1F1;
+@define-color grey #666666;
+@define-color coral #e08060;
+@define-color olive #8a9868;
+@define-color mauve #988090;
+@define-color steel #7890a0;
+@define-color rose #b07878;
+@define-color gold #c8b468;
+
+*{
+  font-family: "SF Pro Rounded";
+  font-size: 13px;
+  font-weight: bold;
+  min-height: 0;
+  background-color: @bg;
+}
+
+#custom-logo{
+  color: @steel;
+  margin-left: 5px;
+}
+
+#workspaces button label{
+  font-family: "Crimson Pro";
+  font-size: 13px;
+}
+
+#workspaces button{
+  color: @grey;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  background: inherit;
+  min-width: 20px;
+  padding: 0 0px;
+}
+
+#workspaces button.focused{
+  color: @coral;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+  background: inherit;
+}
+
+#tray{
+  color: @fg;
+  background-color: transparent;
+  border-bottom: 2px solid @fg;
+  margin-right: 10px;
+}
+
+#tray menu{
+  background-color: @bg;
+  color: @fg;
+}
+
+#tray menu menuitem:hover{
+  background-color: @bg;
+  color: @coral;
+}
+
+#network{
+  color: @olive;
+  background-color: transparent;
+  border-bottom: 2px solid @olive;
+}
+
+#pulseaudio{
+  color: @mauve;
+  background-color: transparent;
+  border-bottom: 2px solid @mauve;
+}
+
+#battery{
+  color: @rose;
+  border-bottom: 2px solid @rose;
+}
+
+#custom-clock{
+  color: @gold;
+  border-bottom: 2px solid @gold;
+  margin-right: 5px;
+}
+
+tooltip{
+  background-color: @bg;
+  padding: 0 0 0 0px;
+  border: 1px solid @fg;
+}
+
+tooltip label{
+  font-family: "SFMono Nerd Font";
+  font-weight: bold;
+  color: @fg;
+}
+
+#custom-sep{
+  font-size: 16px;
+  color: @grey;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+#custom-sep2{
+  font-size: 16px;
+  color: @grey;
+  margin-left: 2px;
+  margin-right: 5px;
+}

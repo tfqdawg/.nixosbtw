@@ -1,0 +1,81 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 21,
+  "modules-left": [
+    "custom/logo",
+    "custom/sep2",
+    "sway/workspaces",
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "custom/sep",
+    "pulseaudio",
+    "custom/sep",
+    "battery",
+    "custom/sep",
+    "custom/clock",
+  ],
+
+  "custom/logo": {
+    "format": " ",
+    "tooltip": false,
+    "on-click": "tofi-drun --drun-launch=true",
+  },
+
+  "sway/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "I",
+      "2": "II",
+      "3": "III",
+      "4": "IV",
+    },
+    "sort-by-id": true
+  },
+
+  "tray": {
+    "icon-size": 13
+  },
+
+  "network": {
+    "format-wifi": "    {essid}",
+    "format-ethernet": "󰈀   {ifname}",
+    "format-disconnected": "󰤮   Off",
+    "tooltip-format": "{ipaddr} | {signalStrength}%",
+    "max-length": 25,
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": "  ",
+    "format-icons": {
+      "headphone": "  ",
+      "default": ["  ", "  "]
+    }
+  },
+
+  "battery": {
+    "format": "{icon}  {capacity}%",
+    "format-icons": ["  ", "  ", "  ", "  ", "  "],
+    "on-click": "${XDG_CONFIG_HOME:-$HOME/.config}/waybar/powermenu.sh"
+  },
+
+  "custom/clock": {
+    "exec": "date +'%a %-d %b  %-I:%M %p'",
+    "interval": 60
+  },
+
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/sep2": {
+    "format": "|",
+    "tooltip": false
+  }
+}

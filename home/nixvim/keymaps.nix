@@ -4,6 +4,15 @@
 	keymaps = [
     {
       mode = "n";
+      key = "<Leader><Leader>";
+      action = ":!";
+      options = {
+        desc = "run shell command";
+        silent = false;
+      };
+    }
+		{
+      mode = "n";
       key = "<leader>ff";
       action = "<cmd>Telescope find_files<CR>";
       options.desc = "find files";

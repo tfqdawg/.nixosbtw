@@ -18,10 +18,10 @@ nix-shell -p git neovim
 git clone https://github.com/tfqdawg/.nixosbtw.git
 ```
 
-5. Copy generated `hardware-configuration.nix` to flake `system/` directory **(IMPORTANT!)**.
+5. Replace generated `hardware-configuration.nix` to flake `system/` directory **(IMPORTANT!)**.
 ```bash
 # Replace $USER with username
-cp /etc/nixos/hardware-configuration.nix /home/$USER/.nixosbtw/system/
+cp /etc/nixos/hardware-configuration.nix /home/$USER/.nixosbtw/system/hardware-configuration.nix
 ```
 
 6. Disable import for `./nixvim` in `~/.nixosbtw/home/default.nix`.

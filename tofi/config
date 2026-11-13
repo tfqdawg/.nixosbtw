@@ -11,13 +11,13 @@ num-results = 10
 
 font = Crimson Pro
 font-size = 15
-prompt-text = "❯ "
+prompt-text = "> "
 prompt-padding = 5
 
-background-color = #030303
-border-color = #737373
-text-color = #e5e5e5
-prompt-color = #737373
+background-color = #0A0A0A
+border-color = #8f8f8f
+text-color = #bbbbbb
+prompt-color = #8f8f8f
 selection-color = #e08060
 
 drun-launch = true

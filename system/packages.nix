@@ -30,6 +30,7 @@
 
   # c/c++ tools.
   gcc
+	clang
   gnumake
   cmake
   ninja

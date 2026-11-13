@@ -15,6 +15,8 @@ let
     ga = "git add";
     gc = "git commit -m";
     gs = "git status";
+    tses = "tmux new -s";
+    tkill = "tmux kill-session";
   };
 
 in{

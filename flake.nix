@@ -1,5 +1,5 @@
 {
-  description = "nixos config";
+  description = "nixos";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -8,7 +8,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nixvim.url = "github:nix-community/nixvim/nixos-26.05";
-		ember-nvim = { url = "github:ember-theme/nvim"; flake = false; };
+		zenbones-nvim = { url = "github:zenbones-theme/zenbones.nvim"; flake = false; };
   };
 
   outputs = inputs:
@@ -17,7 +17,7 @@
       host = "tau";
       system = "x86_64-linux";
     in{
-      nixosConfigurations.${host} = inputs.nixpkgs.lib.nixosSystem {
+      nixosConfigurations.${host} = inputs.nixpkgs.lib.nixosSystem{
         inherit system;
         specialArgs = { inherit inputs system user host; };
         modules = [

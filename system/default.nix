@@ -7,7 +7,6 @@
     ./wdblue.nix
     ./unfree.nix
     ./sway.nix
-    ./locales.nix
     ./services.nix
     ./packages.nix
   ];
@@ -24,9 +23,12 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  fonts.packages = with pkgs; [ crimson-pro nerd-fonts.jetbrains-mono ];
+	time.timeZone = "Asia/Kuala_Lumpur";
+  i18n.defaultLocale = "en_US.UTF-8";
 
-  networking.hostName = "tau";
+	fonts.packages = with pkgs; [ crimson-pro nerd-fonts.jetbrains-mono ];
+
+	networking.hostName = "tau";
   networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 

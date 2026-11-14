@@ -25,9 +25,9 @@ in{
   imports = [ ./nixvim ];
 
 	programs.bash = {
-    enable = true;
-    shellAliases = aliases;
-  };
+		enable = true;
+		shellAliases = aliases;
+	};
 
   programs.starship = {
     enable = true;

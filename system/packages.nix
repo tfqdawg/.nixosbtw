@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
   # core.
+	git
   wget
   curl
   wl-clipboard
@@ -10,32 +11,22 @@
   unzip
   p7zip
   libarchive
-  ffmpeg
-  flatpak
   zathura
   htop
-  ps_mem
-  fzf
   ripgrep
   fd
-  killall
   brightnessctl
 
   # code.
-  git
   python3
-  rustup
   typst
   tmux
 
-  # c/c++ tools.
+  # c/c++
   gcc
-	clang
-  gnumake
   cmake
   ninja
   pkg-config
-  gdb
   valgrind
 
   # misc.

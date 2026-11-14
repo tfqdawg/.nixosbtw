@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
-  aliases = {
+	aliases = {
     vi = "nvim";
     hiscw = "history -c && history -w";
     ls = "ls -ll";
@@ -19,13 +19,13 @@ let
     tkill = "tmux kill-session";
   };
 
+	repo = "${config.home.homeDirectory}/.nixosbtw";
+  link = name: config.lib.file.mkOutOfStoreSymlink "${repo}/${name}";
+
 in{
-  imports = [
-    ./nixvim
-    ./symlinks.nix
-  ];
-  
-  programs.bash = {
+  imports = [ ./nixvim ];
+
+	programs.bash = {
     enable = true;
     shellAliases = aliases;
   };
@@ -35,12 +35,6 @@ in{
     enableBashIntegration = true;
   };
 
-  xdg.configFile."foot/foot.ini".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.nixosbtw/foot/foot.ini";
-
-  xdg.configFile."tmux/tmux.conf".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.nixosbtw/tmux/tmux.conf";
-
-  xdg.configFile."tmux/keybinds.conf".source = config.lib.file.mkOutOfStoreSymlink
-    "${config.home.homeDirectory}/.nixosbtw/tmux/keybinds.conf";
+	# symlinks
+	xdg.configFile = lib.genAttrs [ "foot" "tmux" "sway" "waybar" "tofi" ] (n: { source = link n; });
 }

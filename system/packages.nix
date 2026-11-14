@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-  # core.
+  # core
 	git
   wget
   curl
@@ -15,9 +15,9 @@
   htop
   ripgrep
   fd
-  brightnessctl
+	brightnessctl
 
-  # code.
+	# code
   python3
   typst
   tmux
@@ -29,7 +29,7 @@
   pkg-config
   valgrind
 
-  # misc.
+  # misc
   bibata-cursors
   ];
 }

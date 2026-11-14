@@ -7,14 +7,14 @@
   };
 
   highlightOverride = {
-    StatusLine = { bg = "#383838"; };
-    StatusLineNC = { bg = "#383838"; };
+    StatusLine = { bg = "#3e3c38"; };
+    StatusLineNC = { bg = "#3e3c38"; };
     StlMode   = { fg = "#b07878"; bg = "NONE"; bold = true; };
     StlFile   = { fg = "#988090"; bg = "NONE"; };
     StlBranch = { fg = "#8a9868"; bg = "NONE"; };
     StlFt     = { fg = "#7890a0"; bg = "NONE"; };
     StlPos    = { fg = "#c09058"; bg = "NONE"; };
-    StlSep    = { fg = "#8f8f8f"; bg = "NONE"; };
+    StlSep    = { fg = "#908a7e"; bg = "NONE"; };
   };
 
   extraConfigLua = ''

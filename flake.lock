@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "ember-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1794579648,
+        "narHash": "sha256-mTVrx9V1WTC41RtbtUuP4rispgQnvVbTN/wItWQpVys=",
+        "owner": "ember-theme",
+        "repo": "nvim",
+        "rev": "9e96ec4690bf61be7e21fa0a676539c0b6de5526",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ember-theme",
+        "repo": "nvim",
+        "type": "github"
+      }
+    },
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
@@ -97,10 +113,10 @@
     },
     "root": {
       "inputs": {
+        "ember-nvim": "ember-nvim",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixvim": "nixvim",
-        "zenbones-nvim": "zenbones-nvim"
+        "nixvim": "nixvim"
       }
     },
     "systems": {
@@ -115,22 +131,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "zenbones-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1782458849,
-        "narHash": "sha256-VfbVDXYhHhYWo+KTvfAScJ7Qm0CDnZd0k9c6B72UCpg=",
-        "owner": "zenbones-theme",
-        "repo": "zenbones.nvim",
-        "rev": "8304d8df9b823ff11e103afa62f38c39f534abe6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zenbones-theme",
-        "repo": "zenbones.nvim",
         "type": "github"
       }
     }

@@ -91,7 +91,7 @@ tooltip{
 }
 
 tooltip label{
-  font-family: "SFMono Nerd Font";
+  font-family: "JetBrainsMono NF Medium";
   font-weight: bold;
   color: @fg;
 }

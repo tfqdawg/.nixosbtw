@@ -31,18 +31,15 @@
       pumheight = 10;
     };
 
-		extraPlugins = [ 
+		extraPlugins = [
 			(pkgs.vimUtils.buildVimPlugin{
-				pname = "zenbones-nvim";
-				version = inputs.zenbones-nvim.shortRev or "dirty";
-				src = inputs.zenbones-nvim;
-				doCheck = false;
+				name = "ember-nvim";
+				src = inputs.ember-nvim;
 			})
-			pkgs.vimPlugins.lush-nvim
 		];
 
 		extraConfigLua = ''
-			vim.cmd.colorscheme("zenwritten")
+			vim.cmd.colorscheme("ember")
 		'';
 
     plugins = {

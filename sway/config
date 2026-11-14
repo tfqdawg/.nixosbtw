@@ -18,7 +18,7 @@
 
 # APPEARANCE.
   # wallpaper
-  output * bg $HOME/.nixosbtw/wallpaper/1.jpg fill
+  output * bg $HOME/.nixosbtw/sway/1.png fill
 
   # waybar
   bar {

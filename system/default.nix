@@ -24,7 +24,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
   };
 
-  fonts.packages = with pkgs; [ crimson-pro ];
+  fonts.packages = with pkgs; [ crimson-pro nerd-fonts.jetbrains-mono ];
 
   networking.hostName = "tau";
   networking.networkmanager.enable = true;

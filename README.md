@@ -1,5 +1,7 @@
 ## <p align="center"> NixOS </p>
 
+<p align="center"> Always a work in progress... </p>
+
 <p align="center">
     <img src="preview.png" alt="preview">
 </p>

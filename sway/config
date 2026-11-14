@@ -10,10 +10,11 @@
   set $FILE_MANAGER dolphin
   set $BROWSER io.gitlab.librewolf-community
   set $POWER_MENU $HOME/.nixosbtw/waybar/powermenu.sh
+	set $LOCK swaylock -c 101010
 
   # swaylock before/after suspend
   exec swayidle -w \
-    before-sleep 'swaylock -f -c 101010' \
+    before-sleep '$LOCK -f' \
     after-resume 'swaymsg "output * power on"'
 
 # APPEARANCE.
@@ -38,7 +39,7 @@
   # general.
   bindsym $SUPER+e exec $FILE_MANAGER
   bindsym $SUPER+k exec $TERMINAL
-  bindsym $SUPER+l exec swaylock -c 101010
+  bindsym $SUPER+l exec $LOCK
   bindsym $SUPER+q kill
   bindsym $SUPER+a exec $LAUNCHER
   bindsym $SUPER+Shift+s reload

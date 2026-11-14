@@ -11,11 +11,10 @@ let
     dgs = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations";
     ncg = "sudo nix-collect-garbage";
     nrf = "sudo nixos-rebuild switch --flake .";
-    nd = "nix develop";
     ga = "git add";
     gc = "git commit -m";
     gs = "git status";
-    tses = "tmux new -s";
+    tnew = "tmux new -s";
     tkill = "tmux kill-session";
   };
 
@@ -34,6 +33,8 @@ in{
     enable = true;
     enableBashIntegration = true;
   };
+
+	programs.waybar.enable = true;
 
 	# symlinks
 	xdg.configFile = lib.genAttrs [ "foot" "tmux" "sway" "waybar" "tofi" ] (n: { source = link n; });

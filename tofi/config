@@ -1,0 +1,22 @@
+width = 25%
+height = 30%
+border-width = 0
+outline-width = 0
+padding-top = 25
+padding-left = 25
+padding-right = 25
+padding-bottom = 25
+drun-launch = true
+
+font = Crimson Pro
+font-size = 14
+prompt-text = "> "
+prompt-padding = 5
+result-spacing = 5
+num-results = 10
+
+background-color = #030303
+border-color = #8f8f8f
+text-color = #bbbbbb
+prompt-color = #bbbbbb
+selection-color = #e08060

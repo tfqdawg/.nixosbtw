@@ -1,0 +1,87 @@
+@define-color bg #030303;
+@define-color fg #bbbbbb;
+@define-color grey #8f8f8f;
+@define-color coral #e08060;
+@define-color olive #8a9868;
+@define-color mauve #988090;
+@define-color steel #7890a0;
+@define-color rose #b07878;
+@define-color gold #c8b468;
+
+*{
+	font-family: "Crimson Pro";
+	font-size: 14px;
+	font-weight: bold;
+	min-height: 0;
+	background-color: @bg;
+}
+
+#custom-logo{
+	font-size: 13px;
+	color: @steel;
+	margin-left: 8px;
+}
+
+#workspaces button label{
+	font-family: "Crimson Pro";
+	font-size: 13px;
+	border-bottom: 2px solid @coral;
+}
+
+#workspaces button{
+	color: @grey;
+	border: none;
+	text-shadow: none;
+	box-shadow: none;
+	background: inherit;
+	min-width: 20px;
+	padding: 0;
+}
+
+#workspaces button.focused { color: @coral; }
+
+#tray{
+	color: @fg;
+	background-color: transparent;
+	margin-right: 10px;
+}
+
+#tray menu{
+	background-color: @bg;
+	color: @fg;
+}
+
+#tray menu menuitem:hover{
+	background-color: @bg;
+	color: @coral;
+}
+
+#network{
+	color: @olive;
+	background-color: transparent;
+}
+
+#pulseaudio{
+	color: @mauve;
+	background-color: transparent;
+}
+
+#battery{
+	color: @rose;
+}
+
+#clock{
+	color: @gold;
+	margin-right: 8px;
+}
+
+#custom-logo, #network, #pulseaudio, #battery, #clock, #tray{
+	border-bottom: 2px solid currentColor;
+}
+
+tooltip{ background-color: @bg; padding: 0; border: 1px solid @fg; }
+tooltip label{ font-family: "JetBrainsMono NF Medium"; font-weight: bold; color: @fg; }
+
+#custom-sep, #custom-logo-sep{ font-size: 16px; color: @grey; }
+#custom-sep{ margin: 0 8px; }
+#custom-logo-sep{ margin: 0 5px 0 2px; }

@@ -20,7 +20,7 @@
 	],
 
 	"custom/logo": {
-    "format": " ",
+    "format": "󰯉 ",
     "tooltip": false,
     "on-click": "tofi-drun --drun-launch=true",
 	},

@@ -11,6 +11,7 @@ let
     dgs = "sudo nix-env -p /nix/var/nix/profiles/system --delete-generations";
     ncg = "sudo nix-collect-garbage";
     nrf = "sudo nixos-rebuild switch --flake .";
+		nsh = "nix-shell";
     ga = "git add";
     gc = "git commit -m";
     gs = "git status";
@@ -32,6 +33,12 @@ in{
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
+		settings = {
+			character = {
+				success_symbol = "[󰯉 ❯](bold green)";
+				error_symbol = "[󰯉 ❯](bold red)";
+			};
+		};
   };
 
 	programs.waybar.enable = true;

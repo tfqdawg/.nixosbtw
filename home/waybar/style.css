@@ -1,0 +1,40 @@
+@define-color graphite #1c1b19;
+@define-color fg #d8d0c0;
+@define-color grey #706c61;
+@define-color coral #e08060;
+@define-color orange #c09058;
+@define-color gold #c8b468;
+@define-color olive #8a9868;
+@define-color sage #80a090;
+@define-color steel #7890a0;
+@define-color rose #b07878;
+@define-color mauve #988090;
+
+*{
+	background: @graphite;
+	font-family: "Crimson Pro", monospace;
+	font-size: 14px;
+	font-weight: bold;
+	min-height: 0;
+	padding: 0;
+	border: none;
+	text-shadow: none;
+}
+
+tooltip, tootlip label{ border: 1px solid @fg; }
+
+#workspaces button{ color: grey; margin-left: 15px; }
+#workspaces button label{ font-size: 13px; }
+#workspaces button.focused{ color: @coral; }
+
+#tray, #tray menu{ color: @fg; }
+#tray menu menuitem:hover{ color: @coral; }
+
+#tray, #network, #pulseaudio, #battery{
+	border-bottom: 2px solid currentColor;
+	margin-right: 8px;
+}
+#network{ color: @olive; }
+#pulseaudio{ color: @mauve; }
+#battery{ color: @rose; }
+#clock{ color: @gold; border-bottom: 2px solid currentColor; margin-right: 15px; }
